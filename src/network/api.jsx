@@ -1,8 +1,6 @@
 import axios from "axios";
 axios.defaults.baseURL =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:8090"
-    : "http://34.41.241.34:3000";
+  process.env.NODE_ENV === "development" && "http://localhost:8090";
 
 export const apiNoToken = async (url, method, data) => {
   const body = await axios({
